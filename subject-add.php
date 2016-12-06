@@ -218,27 +218,39 @@ while ($row = mysql_fetch_assoc($query)) {
       $('#subgrp-other').hide();
       
       $('#group-select').change(function () {
-        if ($(this).val() == "1 мех") {
-          $('#subgrp-meh').show();
-          $('#subgrp-tkiar').hide();
-          $('#subgrp-other').hide();
-        } else if ($(this).val() == "ТКиАР") {
-          $('#subgrp-tkiar').show();
-          $('#subgrp-meh').hide();
-          $('#subgrp-other').hide();
-        } else if ($(this).val() == "ФИИТ" ||
-          $(this).val() == "БИ" ||
-          $(this).val() == "МОиАИС") {
-          $('#subgrp-other').show();
-          $('#subgrp-tkiar').hide();
-          $('#subgrp-meh').hide();
-        } else {
-          $('#subgrp-tkiar').hide();
-          $('#subgrp-meh').hide();
-          $('#subgrp-other').hide();
+        switch ($(this).val()) {
+          case "1 мех":
+            $('#subgrp-meh').show();
+            $('#subgrp-tkiar').hide();
+            $('#subgrp-other').hide();
+            break;
+          case "ТКиАР":
+            $('#subgrp-tkiar').show();
+            $('#subgrp-meh').hide();
+            $('#subgrp-other').hide();
+            break;
+          case "ФИИТ":
+            $('#subgrp-other').show();
+            $('#subgrp-tkiar').hide();
+            $('#subgrp-meh').hide();
+            break;
+          case "БИ":
+            $('#subgrp-other').show();
+            $('#subgrp-tkiar').hide();
+            $('#subgrp-meh').hide();
+            break;
+          case "МОиАИС":
+            $('#subgrp-other').show();
+            $('#subgrp-tkiar').hide();
+            $('#subgrp-meh').hide();
+            break;
+          default:
+            $('#subgrp-tkiar').hide();
+            $('#subgrp-meh').hide();
+            $('#subgrp-other').hide();
+            break;
+          
         }
-              
-
       });
     </script>
   </body>
